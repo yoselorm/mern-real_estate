@@ -1,7 +1,7 @@
 const User  = require("../models/user.model")
 const bcrypt = require('bcrypt')
 
-const signup = async (req,res) =>{
+const signup = async (req,res,next) =>{
     const{username,email,password} = req.body
 
 
@@ -37,11 +37,11 @@ const signup = async (req,res) =>{
     })
     
    } catch (error) {
-    console.log(error);
-    res.status(500).json({
-        message: 'Internal server error'
-    })
-    
+    // console.log(error);
+    // res.status(500).json({
+    //     message: 'Internal server error'
+    // })    
+    next(error)
    }
 }
 

@@ -5,4 +5,4 @@ const authRouter = express.Router()
 
 authRouter.post('/signup',signup)
 
-module.exports = authRouter
+module.exports = authRouter 
